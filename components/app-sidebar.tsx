@@ -29,6 +29,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { HistorySideBarSkeleton } from "./main/historySideBar";
 import { Button } from "@/components/ui/button";
 import { useHistory } from "@/lib/contexts/HistoryContext";
 import Link from "next/link";
@@ -152,10 +153,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       ) => (
                         <SidebarMenuItem key={index}>
                           {item.isLoading ? (
-                            <div className="animate-pulse flex items-center gap-2 px-3 py-2">
-                              <div className="h-3 w-3 rounded-full bg-muted"></div>
-                              <div className="h-3 flex-1 rounded bg-muted"></div>
-                            </div>
+                            <HistorySideBarSkeleton />
                           ) : (
                             <SidebarMenuButton asChild isActive={item.isActive}>
                               <Link href={item.url}>{item.title}</Link>
