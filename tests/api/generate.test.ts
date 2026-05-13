@@ -70,7 +70,7 @@ describe("POST /api/generate", () => {
       id: "123",
       isVerified: true,
       plan: "free",
-    } as any);
+    } as never);
 
     vi.mocked(db.generation.count).mockResolvedValue(10);
 
@@ -92,7 +92,7 @@ describe("POST /api/generate", () => {
       id: "123",
       isVerified: true,
       plan: "free",
-    } as any);
+    } as never);
 
     vi.mocked(db.generation.count).mockResolvedValue(1);
 
@@ -121,7 +121,7 @@ describe("POST /api/generate", () => {
       id: "123",
       isVerified: true,
       plan: "free",
-    } as any);
+    } as never);
 
     vi.mocked(db.generation.count).mockResolvedValue(1);
 
